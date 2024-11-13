@@ -2463,6 +2463,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1129259069}
     m_Modifications:
     - target: {fileID: 807075137743986337, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
+      propertyPath: myDungeon
+      value: 
+      objectReference: {fileID: 1129259070}
+    - target: {fileID: 807075137743986337, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
       propertyPath: objectsToReset.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -2552,6 +2556,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
+--- !u!114 &289104242 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 807075137743986337, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
+  m_PrefabInstance: {fileID: 289104241}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 431f58c788104dc47ae95d5713b267da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &289306682 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2870505766330902964, guid: d60d45c71bd94ea4cac354114d338a96, type: 3}
@@ -2839,11 +2854,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8914612539934737510, guid: ff7141f3a6d100045a676711f29aed38, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.5
+      value: -3.75
       objectReference: {fileID: 0}
     - target: {fileID: 8914612539934737510, guid: ff7141f3a6d100045a676711f29aed38, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.5
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 8914612539934737510, guid: ff7141f3a6d100045a676711f29aed38, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5579,6 +5594,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1129259069}
     m_Modifications:
     - target: {fileID: 807075137743986337, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
+      propertyPath: myDungeon
+      value: 
+      objectReference: {fileID: 1129259070}
+    - target: {fileID: 807075137743986337, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
       propertyPath: objectsToReset.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -5664,6 +5683,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
+--- !u!114 &688974655 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 807075137743986337, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
+  m_PrefabInstance: {fileID: 688974654}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 431f58c788104dc47ae95d5713b267da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &700167054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5907,6 +5937,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1129259069}
     m_Modifications:
     - target: {fileID: 807075137743986337, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
+      propertyPath: myDungeon
+      value: 
+      objectReference: {fileID: 1129259070}
+    - target: {fileID: 807075137743986337, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
       propertyPath: objectsToReset.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -5984,6 +6018,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
+--- !u!114 &751023338 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 807075137743986337, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
+  m_PrefabInstance: {fileID: 751023337}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 431f58c788104dc47ae95d5713b267da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &753517051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46221,6 +46266,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1805231110}
     m_Modifications:
     - target: {fileID: 807075137743986337, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
+      propertyPath: myDungeon
+      value: 
+      objectReference: {fileID: 1805231111}
+    - target: {fileID: 807075137743986337, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
       propertyPath: objectsToReset.Array.size
       value: 7
       objectReference: {fileID: 0}
@@ -46302,6 +46351,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
+--- !u!114 &1122278142 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 807075137743986337, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
+  m_PrefabInstance: {fileID: 1122278141}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 431f58c788104dc47ae95d5713b267da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1122596573 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8650745003203165605, guid: bc10275df18ea794c9f0b0911911a283, type: 3}
@@ -46446,6 +46506,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1129259069}
+  - component: {fileID: 1129259070}
   m_Layer: 0
   m_Name: Dungeon 2
   m_TagString: Untagged
@@ -46471,6 +46532,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1129259070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129259068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13990f3cc212980499c683e672bc1c78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dungeonRooms:
+  - {fileID: 2087510092}
+  - {fileID: 751023338}
+  - {fileID: 289104242}
+  - {fileID: 688974655}
+  resetPos: {x: 9.5, y: -5.5, z: 0}
+  player: {fileID: 1309381667}
 --- !u!1 &1129955198 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1142595133180091350, guid: bfa064f3c35142f4fb78679c76c996b0, type: 3}
@@ -47252,6 +47332,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1805231110}
     m_Modifications:
     - target: {fileID: 807075137743986337, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
+      propertyPath: myDungeon
+      value: 
+      objectReference: {fileID: 1805231111}
+    - target: {fileID: 807075137743986337, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
       propertyPath: objectsToReset.Array.size
       value: 12
       objectReference: {fileID: 0}
@@ -47358,6 +47442,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7011183962699982754, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
   m_PrefabInstance: {fileID: 1217975031}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1217975033 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 807075137743986337, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
+  m_PrefabInstance: {fileID: 1217975031}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 431f58c788104dc47ae95d5713b267da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1223071787 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7633576360578719346, guid: 14dc658dcd85e0c4e8eabeff4d84be6a, type: 3}
@@ -48003,15 +48098,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d34050f701040f7b3953d4d5f65db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTeleported: 0
+  recentlyTeleported: 0
   isMoving: 0
   originalPosition: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   timeToMove: 0.2
   lastDirection: {x: 0, y: 0, z: 0}
   collisionObjects: {fileID: 1613714591}
+  currentDungeon: {fileID: 0}
   currentRoom: {fileID: 0}
   firstPositionInRoom: {x: 0, y: 0, z: 0}
+  firstPositionInDungeon: {x: 0, y: 0, z: 0}
   canJumpOverPits: 1
   jumpedOverPit: 0
   canPullBoxes: 0
@@ -48078,7 +48175,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1309381664}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81.5, y: 27.5, z: 0}
+  m_LocalPosition: {x: 2.5, y: -2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -49930,6 +50027,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1805231110}
     m_Modifications:
     - target: {fileID: 807075137743986337, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
+      propertyPath: myDungeon
+      value: 
+      objectReference: {fileID: 1805231111}
+    - target: {fileID: 807075137743986337, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
       propertyPath: objectsToReset.Array.size
       value: 18
       objectReference: {fileID: 0}
@@ -50060,6 +50161,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7011183962699982754, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
   m_PrefabInstance: {fileID: 1467321951}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1467321953 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 807075137743986337, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
+  m_PrefabInstance: {fileID: 1467321951}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 431f58c788104dc47ae95d5713b267da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1502271888 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8650745003203165605, guid: bc10275df18ea794c9f0b0911911a283, type: 3}
@@ -72300,6 +72412,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1805231110}
+  - component: {fileID: 1805231111}
   m_Layer: 0
   m_Name: Dungeon 1
   m_TagString: Untagged
@@ -72324,6 +72437,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1805231111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805231109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13990f3cc212980499c683e672bc1c78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dungeonRooms:
+  - {fileID: 1122278142}
+  - {fileID: 1217975033}
+  - {fileID: 1467321953}
+  resetPos: {x: 12.5, y: -5.5, z: 0}
+  player: {fileID: 1309381667}
 --- !u!114 &1815522191 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7633576360578719356, guid: 14dc658dcd85e0c4e8eabeff4d84be6a, type: 3}
@@ -74182,6 +74313,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1129259069}
     m_Modifications:
     - target: {fileID: 807075137743986337, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
+      propertyPath: myDungeon
+      value: 
+      objectReference: {fileID: 1129259070}
+    - target: {fileID: 807075137743986337, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
       propertyPath: objectsToReset.Array.size
       value: 14
       objectReference: {fileID: 0}
@@ -74323,6 +74458,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
+--- !u!114 &2087510092 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 807075137743986337, guid: 9e3e0de23cca8ba4aa66a9c644a076b7, type: 3}
+  m_PrefabInstance: {fileID: 2087510091}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 431f58c788104dc47ae95d5713b267da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2088718649
 GameObject:
   m_ObjectHideFlags: 0
@@ -74886,7 +75032,7 @@ PrefabInstance:
       objectReference: {fileID: 1031898075}
     - target: {fileID: 8914612539934737510, guid: ff7141f3a6d100045a676711f29aed38, type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 8914612539934737510, guid: ff7141f3a6d100045a676711f29aed38, type: 3}
       propertyPath: m_LocalPosition.x
