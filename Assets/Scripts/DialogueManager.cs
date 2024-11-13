@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
     public bool isTextDisplayed;
     private Coroutine currentTextCoroutine;
     private bool isTypingCoroutineOn;
+    private string currentlyTypedText;
 
     void Start()
     {
@@ -30,15 +31,22 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextLine(string interactableName, string[] dialogueSentences)
     {
-        if(isTextDisplayed)
+        if (isTextDisplayed)
         {
-            if(sentences.Count == 0)
+			if (sentences.Count == 0 && !isTypingCoroutineOn)
                 HideDialogueBox();
             else
             {
-                if(isTypingCoroutineOn)
+                if (isTypingCoroutineOn)
+                {
                     StopCoroutine(currentTextCoroutine);
-                currentTextCoroutine = StartCoroutine(TypeSentence(sentences.Dequeue()));
+                    DialogueText.text = currentlyTypedText;
+                    StoppedTyping();
+                }
+                else
+                {
+					currentTextCoroutine = StartCoroutine(TypeSentence());
+                }
             }
         }
         else
@@ -54,7 +62,7 @@ public class DialogueManager : MonoBehaviour
 
             if(isTypingCoroutineOn)
                 StopCoroutine(currentTextCoroutine);
-            currentTextCoroutine = StartCoroutine(TypeSentence(sentences.Dequeue()));
+            currentTextCoroutine = StartCoroutine(TypeSentence());
 
             dialogueBox.SetActive(true);
             isTextDisplayed = true;
@@ -73,12 +81,18 @@ public class DialogueManager : MonoBehaviour
         DisplayNextLine(interactableName, dialogueSentences);
     }
 
-    IEnumerator TypeSentence(string sentenceToType)
+    void StoppedTyping()
+    {
+        currentlyTypedText = null;
+        isTypingCoroutineOn = false;
+    }
+    IEnumerator TypeSentence()
     {
         isTypingCoroutineOn = true;
+		currentlyTypedText = sentences.Dequeue();
 
-        DialogueText.text = "";
-        foreach(char letter in sentenceToType.ToCharArray())
+		DialogueText.text = "";
+        foreach(char letter in currentlyTypedText.ToCharArray())
         {
             DialogueText.text += letter;
             for(int i = 0; i < dialogueTypingSpeed; i++)
@@ -87,6 +101,7 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-        isTypingCoroutineOn = false;
+
+        StoppedTyping();
     }
 }
