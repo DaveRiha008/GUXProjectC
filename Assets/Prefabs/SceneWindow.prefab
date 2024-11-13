@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7011183962699982754}
   - component: {fileID: 807075137743986351}
   - component: {fileID: 807075137743986337}
+  - component: {fileID: 6286840332501599618}
   m_Layer: 0
   m_Name: SceneWindow
   m_TagString: Untagged
@@ -70,5 +71,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431f58c788104dc47ae95d5713b267da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myDungeon: {fileID: 0}
   objectsToReset: []
+  npcToSave: {fileID: 0}
   timeToMove: 0.4
+--- !u!114 &6286840332501599618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4242053987537008685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49c5651a1ce2bfe44ae29871933fae87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0

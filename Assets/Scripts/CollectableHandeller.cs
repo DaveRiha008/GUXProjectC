@@ -21,6 +21,11 @@ public class CollectableHandeller : MonoBehaviour
     void OnTriggerEnter2D()
     {
         player.AddCoinToInventory();
+
+        CoinPickUpLogging log = GetComponent<CoinPickUpLogging>();
+        log.PickedUp();
+
+        //GameLoggingScript.WriteLineToLog("Collected something");
         Destroy(gameObject);
     }
 }
