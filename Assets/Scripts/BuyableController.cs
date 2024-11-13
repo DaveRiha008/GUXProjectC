@@ -14,15 +14,17 @@ public class BuyableController : MonoBehaviour
     private string[] notEnoughMoneyDialogue;
 
     private string[] skinOwnedEDialogue;
-    private string[] skinOwnedOnBuyDialogue;
+	private string[] skinOwnedOnBuyDialogue;
+	private string[] confirmationDialogue;
 
-    public int price;
+	public int price;
     
     private SpriteRenderer keyboardPromptE;
     private SpriteRenderer keyboardPromptF;
     private bool isTriggered;
     private bool wasBought;
     private bool isSkinBought;
+    private bool isConfirmationShown = false;
     
     private DialogueManager dialogueManager;
 
@@ -38,18 +40,22 @@ public class BuyableController : MonoBehaviour
         keyboardPromptF = gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>();
         keyboardPromptF.enabled = false;
         isTriggered = false;
+        isConfirmationShown = false;
 
-        dialogueManager = FindObjectOfType<DialogueManager>();
+
+	    dialogueManager = FindObjectOfType<DialogueManager>();
         player = FindObjectOfType<PlayerController>();
 
         itemBoughtDialogue = new string[] {$"{title} bought. Thank you for your purchase!"};
         notEnoughMoneyDialogue = new string[] {"Sorry, you don't have enough money for this purchase"};
         skinOwnedEDialogue = new string[] {"Change skin for 0 Coins"};
-        skinOwnedOnBuyDialogue = new string[] {"Skin equipped!"};
-    }
+		skinOwnedOnBuyDialogue = new string[] { "Skin equipped!" };
+		confirmationDialogue = new string[] { $"Are you sure you want to buy {title}?" };
 
-    // Update is called once per frame
-    void Update()
+	}
+
+	// Update is called once per frame
+	void Update()
     {
         if(!wasBought)
             HandleInput();
@@ -59,6 +65,7 @@ public class BuyableController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && isTriggered)
         {
+            isConfirmationShown = false;
             if(isSkinBought)
                 dialogueManager.DisplayNextLine(title, skinOwnedEDialogue);
             else
@@ -67,7 +74,13 @@ public class BuyableController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.F) && isTriggered)
         {
-            if(player.coinsInInventory < price)
+            if (!isConfirmationShown)
+            {
+                dialogueManager.DisplayNextLine(title, confirmationDialogue);
+                isConfirmationShown = true;
+                return;
+            }
+            if (player.coinsInInventory < price)
             {
                 dialogueManager.StartNewDialogueOnTopOfPrevious(title, notEnoughMoneyDialogue);
             }
@@ -93,8 +106,10 @@ public class BuyableController : MonoBehaviour
                 keyboardPromptE.enabled = true;
                 keyboardPromptF.enabled = true;
                 isTriggered = true;
-            }
-        }
+				isConfirmationShown = false;
+
+			}
+		}
     }
 
     void OnTriggerExit2D(Collider2D collision)
@@ -104,6 +119,7 @@ public class BuyableController : MonoBehaviour
             keyboardPromptE.enabled = false;
             keyboardPromptF.enabled = false;
             isTriggered = false;
+            isConfirmationShown = false;
 
             dialogueManager.HideDialogueBox();
         }
