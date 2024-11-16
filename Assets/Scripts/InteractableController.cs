@@ -6,12 +6,15 @@ using UnityEngine.Events;
 
 public class InteractableController : MonoBehaviour
 {
+    public INTERACTABLE_TYPE myType = INTERACTABLE_TYPE.SIGN;
 
     public string title;
     public string[] dialogue;
     
     private SpriteRenderer keyboardPrompt;
     private bool isTriggered;
+
+    private bool firstInteract = true;
     
     private DialogueManager dialogueManager;
 
@@ -19,6 +22,7 @@ public class InteractableController : MonoBehaviour
     public bool isSaved;
 
     public UnityEvent npcEvent;
+    public UnityEvent interactedWith;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +32,7 @@ public class InteractableController : MonoBehaviour
         isTriggered = false;
 
         dialogueManager = FindObjectOfType<DialogueManager>();
+        interactedWith.AddListener(delegate { GameLoggingScript.InteractedWithInteractable(myType); });
     }
 
     // Update is called once per frame
@@ -35,6 +40,8 @@ public class InteractableController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && isTriggered)
         {
+            firstInteract = false;
+            interactedWith.Invoke();
             dialogueManager.DisplayNextLine(title, dialogue);
 
             if(isSaveable)
@@ -62,3 +69,5 @@ public class InteractableController : MonoBehaviour
         }
     }
 }
+
+public enum INTERACTABLE_TYPE { COW, GEORGE, SIGN, NPC, SHOPKEEPER, SAVEABLE_NPC }

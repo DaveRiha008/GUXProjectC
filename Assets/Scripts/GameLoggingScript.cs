@@ -73,5 +73,11 @@ public class GameLoggingScript : MonoBehaviour
 		//outputWriter.WriteLine(str);
 	}
 
+	public static void InteractedWithInteractable(INTERACTABLE_TYPE type)
+	{
+		Debug.Log($"Just interacted with {type} - logging");
+		WriteLineToLog($"Interacted with {type.ToString()}");
+	}
+
 
 }
