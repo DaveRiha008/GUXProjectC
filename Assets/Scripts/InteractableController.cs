@@ -22,8 +22,6 @@ public class InteractableController : MonoBehaviour
     public bool isSaved;
 
     public UnityEvent npcEvent;
-    public UnityEvent interactedWith;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +30,6 @@ public class InteractableController : MonoBehaviour
         isTriggered = false;
 
         dialogueManager = FindObjectOfType<DialogueManager>();
-        interactedWith.AddListener(delegate { GameLoggingScript.InteractedWithInteractable(myType); });
     }
 
     // Update is called once per frame
@@ -40,8 +37,11 @@ public class InteractableController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && isTriggered)
         {
-            firstInteract = false;
-            interactedWith.Invoke();
+            if (firstInteract)
+            {
+                firstInteract = false;
+				GameLoggingScript.InteractedWithInteractable(myType, title);
+            }
             dialogueManager.DisplayNextLine(title, dialogue);
 
             if(isSaveable)
@@ -70,4 +70,4 @@ public class InteractableController : MonoBehaviour
     }
 }
 
-public enum INTERACTABLE_TYPE { COW, GEORGE, SIGN, NPC, SHOPKEEPER, SAVEABLE_NPC }
+public enum INTERACTABLE_TYPE { COW, GEORGE, SIGN, NPC, SHOPKEEPER, SAVEABLE_NPC, SAVED_NPC, TUTORIAL_SIGN }
