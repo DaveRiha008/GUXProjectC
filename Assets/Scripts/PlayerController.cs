@@ -43,6 +43,12 @@ public class PlayerController : MonoBehaviour
 	private Text inventoryCountText;
 	private bool firstTimePickingUpCoins;
 
+
+	//For logging
+	public bool isActive = true;
+	private const float timeUntilInactive = 30.0f;
+	private float timeSinceActive = 0.0f;
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -61,6 +67,22 @@ public class PlayerController : MonoBehaviour
 	void Update()
 	{
 		HandleInput();
+		PlayerActivityCheck();
+	}
+
+	private void PlayerActivityCheck()
+	{
+		if (Input.anyKey)
+		{
+			timeSinceActive = 0.0f;
+			isActive = true;
+		}
+		else
+		{
+			timeSinceActive += Time.deltaTime;
+			if(timeSinceActive > timeUntilInactive)
+				isActive = false;
+		}
 	}
 
 	private void HandleInput()

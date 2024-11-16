@@ -7,16 +7,18 @@ public class WindowTimeCountingScript : MonoBehaviour
 	[SerializeField]
 	int id = 0;
 	bool playerInside = false;
+
+	PlayerController player;
     // Update is called once per frame
     void Update()
     {
-		if (playerInside)
+		if (playerInside && player.isActive)
 			TimeSpentCounter.AddTime(id, Time.deltaTime);
     }
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.TryGetComponent<PlayerController>(out _))
+		if (collision.TryGetComponent<PlayerController>(out player))
 		{
 			playerInside = true;
 		}
@@ -24,7 +26,7 @@ public class WindowTimeCountingScript : MonoBehaviour
 
 	private void OnTriggerExit2D(Collider2D collision)
 	{
-		if (collision.TryGetComponent<PlayerController>(out _))
+		if (collision.TryGetComponent<PlayerController>(out player))
 		{
 			playerInside = false;
 		}
