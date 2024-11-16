@@ -22,8 +22,8 @@ public class BuyableController : MonoBehaviour
     private SpriteRenderer keyboardPromptE;
     private SpriteRenderer keyboardPromptF;
     private bool isTriggered;
-    private bool wasBought;
-    private bool isSkinBought;
+    private bool wasBought = false;
+    private bool isSkinBought = false;
     private bool isConfirmationShown = false;
     
     private DialogueManager dialogueManager;
@@ -86,11 +86,14 @@ public class BuyableController : MonoBehaviour
             }
             else
             {
+                if (!(wasBought || isSkinBought))
+                    GameLoggingScript.WriteLineToLog($"Player bought {title}");
+
                 player.RemoveCoinsFromInventory(price);
                 ExecuteOnBuy.Invoke();
 
-                if(!isSkinBought)
-                    dialogueManager.StartNewDialogueOnTopOfPrevious(title, itemBoughtDialogue); 
+				if (!isSkinBought)
+                    dialogueManager.StartNewDialogueOnTopOfPrevious(title, itemBoughtDialogue);
                 else
                     dialogueManager.StartNewDialogueOnTopOfPrevious(title, skinOwnedOnBuyDialogue);
             }
