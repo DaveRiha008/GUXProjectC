@@ -1,0 +1,13 @@
+Logs captured by the game are stored in a directory of the game /Projec_C_Data/LabelsLogs
+The logs are saved in .txt files
+Every log has a name containing the date and time, when the according game was started
+
+The format of logs is unstructured, but it contains the following info:
+
+There is dynamically written information:
+Everytime an item is bought from the shop, the logs capture it (A line saying which item was bought)
+Everytime the player interacts with something for the first time, the logs capture it (A line saying with which interactable)
+
+And there is information written at the game termination:
+When the game is terminated, the logs capture the overall time spent on each screen described by its unique ID (for screen IDs see ScreenIDs.png)
+When the game is terminated, the logs capture the overall count of coins collected for each type (based on their rarity)
