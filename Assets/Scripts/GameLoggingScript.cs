@@ -35,7 +35,8 @@ public class GameLoggingScript : MonoBehaviour
 	{	
 		Directory.CreateDirectory(Application.persistentDataPath + '/' + outputFolder);
 		outputPath = Application.persistentDataPath + '/' + outputFolder +
-						DateTime.Now.ToShortDateString() + 
+						DateTime.Today.Day.ToString() + 
+						DateTime.Today.Month.ToString() +
 						DateTime.Now.Hour + 
 						DateTime.Now.Minute + 
 						DateTime.Now.Second + 
