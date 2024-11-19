@@ -12,7 +12,7 @@ public class WindowTimeCountingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (playerInside && player.isActive)
+		if (playerInside && player != null && player.isActive)
 			TimeSpentCounter.AddTime(id, Time.deltaTime);
     }
 

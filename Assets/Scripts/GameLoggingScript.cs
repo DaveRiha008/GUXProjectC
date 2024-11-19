@@ -33,12 +33,11 @@ public class GameLoggingScript : MonoBehaviour
 
 	private void Start()
 	{	
-		Directory.CreateDirectory(Application.dataPath + '/' + outputFolder);
-		outputPath = Application.dataPath + '/' +
-						outputFolder +
+		Directory.CreateDirectory(Application.persistentDataPath + '/' + outputFolder);
+		outputPath = Application.persistentDataPath + '/' + outputFolder +
 						DateTime.Now.ToShortDateString() + 
 						DateTime.Now.Hour + 
-						DateTime.Now.Minute +
+						DateTime.Now.Minute + 
 						DateTime.Now.Second + 
 						outputFileName;
 		File.Create(outputPath);
@@ -61,16 +60,6 @@ public class GameLoggingScript : MonoBehaviour
 		Debug.Log($"Wrote {str} to {outputPath}");
 
 		writer.Close();
-
-		//StreamReader reader = new StreamReader(outputPath);
-
-		//Print the text from the file
-
-		//Debug.Log(reader.ReadToEnd());
-		//Debug.Log($"Is the text of {outputPath} file");
-
-		//reader.Close();
-		//outputWriter.WriteLine(str);
 	}
 
 	public static void InteractedWithInteractable(INTERACTABLE_TYPE type, string title)
