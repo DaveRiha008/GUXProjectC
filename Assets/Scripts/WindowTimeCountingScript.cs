@@ -5,7 +5,7 @@ using UnityEngine;
 public class WindowTimeCountingScript : MonoBehaviour
 {
 	[SerializeField]
-	int id = 0;
+	public int id = 0;
 	bool playerInside = false;
 
 	PlayerController player;

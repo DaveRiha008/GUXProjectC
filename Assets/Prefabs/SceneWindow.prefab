@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 807075137743986351}
   - component: {fileID: 807075137743986337}
   - component: {fileID: 6286840332501599618}
+  - component: {fileID: 7934907854124417991}
   m_Layer: 0
   m_Name: SceneWindow
   m_TagString: Untagged
@@ -88,3 +89,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+--- !u!114 &7934907854124417991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4242053987537008685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 309a43f2263364a4b99f6ac2643a0327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8625022013251619715, guid: 5f3111d725490f649987b7128df9db83, type: 3}

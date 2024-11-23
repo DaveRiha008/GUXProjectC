@@ -9,9 +9,11 @@ public class GameLoggingScript : MonoBehaviour
 {
 	private static GameLoggingScript _instance;
 
-	private static string outputPath = "";
+	public static string outputPath = "";
+	public static string outputFile = "";
 
-	private static string outputFileName = "Logs.txt";
+
+    private static string outputFileName = "Logs.txt";
 	private static string outputFolder = "LabelsLogs/";
 
 	public static GameLoggingScript Instance
@@ -29,20 +31,24 @@ public class GameLoggingScript : MonoBehaviour
 
 		_instance = this;
 		DontDestroyOnLoad(this.gameObject);
+		
+		Directory.CreateDirectory(Application.dataPath + '/' + outputFolder);
+		outputPath = Application.dataPath + '/' + outputFolder +
+						DateTime.Today.Day.ToString() +
+						DateTime.Today.Month.ToString() +
+						DateTime.Now.Hour +
+						DateTime.Now.Minute +
+						DateTime.Now.Second;
+		//+ outputFileName;
+		outputFile = outputPath + outputFileName;
+        File.Create(outputFile);
+        Directory.CreateDirectory(outputPath);
+		Debug.Log("Start of gamelogger ended and writer instantiated");
 	}
 
 	private void Start()
 	{	
-		Directory.CreateDirectory(Application.dataPath + '/' + outputFolder);
-		outputPath = Application.dataPath + '/' + outputFolder +
-						DateTime.Today.Day.ToString() + 
-						DateTime.Today.Month.ToString() +
-						DateTime.Now.Hour + 
-						DateTime.Now.Minute + 
-						DateTime.Now.Second + 
-						outputFileName;
-		File.Create(outputPath);
-		Debug.Log("Start of gamelogger ended and writer instantiated");
+
 	}
 
 	private void OnDestroy()
@@ -55,10 +61,10 @@ public class GameLoggingScript : MonoBehaviour
 	{
 		//Write some text to the test.txt file
 
-		StreamWriter writer = new StreamWriter(outputPath, true);
+		StreamWriter writer = new StreamWriter(outputFile, true);
 
 		writer.WriteLine(str);
-		Debug.Log($"Wrote {str} to {outputPath}");
+		Debug.Log($"Wrote {str} to {outputFile}");
 
 		writer.Close();
 	}
