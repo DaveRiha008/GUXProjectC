@@ -52,13 +52,6 @@ public class HeatmapCounter : MonoBehaviour
         Debug.Log($"Start of gamelogger for {id}");
         
         heatmap = new float[x_size,y_size];
-        //for (int i = 0; i < x_size; i++)
-        //{
-        //    for (int j = 0; j < y_size; j++)
-        //    {
-        //        heatmap[i, j] = 0;
-        //    }
-        //}
     }
 
     // Update is called once per frame
@@ -91,6 +84,11 @@ public class HeatmapCounter : MonoBehaviour
     }
 
     private void OnDestroy()
+    {
+        UpdateHeatmap();
+    }
+
+    public void UpdateHeatmap()
     {
         string str = "";
         for (int i = 0; i < y_size; i++)

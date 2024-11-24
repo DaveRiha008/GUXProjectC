@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System;
+using System.Threading;
 
 
 public class GameLoggingScript : MonoBehaviour
 {
 	private static GameLoggingScript _instance;
 
-	public static string outputPath = "";
+    public static string outputPath = "";
 	public static string outputFile = "";
+	public static string heatmapFile = "";
 
 
     private static string outputFileName = "Logs.txt";
@@ -43,19 +45,22 @@ public class GameLoggingScript : MonoBehaviour
 		outputFile = outputPath + outputFileName;
         File.Create(outputFile);
         Directory.CreateDirectory(outputPath);
-		Debug.Log("Start of gamelogger ended and writer instantiated");
+        heatmapFile = outputPath + "heatmap.txt";
+		File.Create(heatmapFile);
+        Debug.Log("Start of gamelogger ended and writer instantiated");
 	}
 
 	private void Start()
 	{	
-
 	}
 
 	private void OnDestroy()
 	{
 		TimeSpentCounter.WriteToOutput();
 		CoinPickUpLogging.WriteToOutput();
-	}
+		StartCoroutine(Wait());
+		WriteHeatmap();
+    }
 
 	public static void WriteLineToLog(string str)
 	{
@@ -68,6 +73,32 @@ public class GameLoggingScript : MonoBehaviour
 
 		writer.Close();
 	}
+
+	private static IEnumerator Wait()
+	{
+        yield return new WaitForSeconds(5);
+    }
+
+	private static void WriteHeatmap()
+	{
+		string heatmapPart = "";
+		for (int i = 2; i <= 36; i++)
+		{
+			heatmapPart = GameLoggingScript.outputPath + '/' + i + ".txt";
+			StreamReader reader = new StreamReader(heatmapPart, true);
+            StreamWriter writer = new StreamWriter(heatmapFile, true);
+
+			string matrix = reader.ReadToEnd();
+			writer.WriteLine("Heatmap for part: "+i);
+			writer.WriteLine(matrix);
+			writer.WriteLine("################################################################");
+			writer.WriteLine();
+			writer.Close();
+			reader.Close();
+
+        }
+    }
+
 
 	public static void InteractedWithInteractable(INTERACTABLE_TYPE type, string title)
 	{
