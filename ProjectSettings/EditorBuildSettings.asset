@@ -8,10 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/DadaScene.unity
     guid: 5153a6c61dbb35940851b11f70ffc1b6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
     path: Assets/Scenes/TondaTestScene.unity
     guid: f567bb19a84d44b558c5cecbbab0e581
+  - enabled: 1
+    path: Assets/Scenes/GUX_Test.unity
+    guid: ef8b4e1488103ac4aafb01e11ad7360f
   m_configObjects: {}
