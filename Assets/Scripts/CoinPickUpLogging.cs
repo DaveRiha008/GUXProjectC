@@ -42,7 +42,7 @@ public class CoinPickUpLogging : MonoBehaviour
 		alreadyWrittenToOutput = true;
 		foreach (int i in typesCollectedDict.Keys)
 		{
-			GameLoggingScript.WriteLineToLog($"Collected coins of type {((COIN_TYPE)i)} = {typesCollectedDict[i]}");
+			GameLoggingScript.WriteLineToLog($"Collected coins of type {((COIN_TYPE)i)} = {typesCollectedDict[i]}", GameLoggingScript.outputFile);
 		}
 	}
 }

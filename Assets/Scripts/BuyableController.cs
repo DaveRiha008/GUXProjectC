@@ -87,7 +87,7 @@ public class BuyableController : MonoBehaviour
             else
             {
                 if (!(wasBought || isSkinBought))
-                    GameLoggingScript.WriteLineToLog($"Player bought {title}");
+                    GameLoggingScript.WriteLineToLog($"Player bought {title}", GameLoggingScript.outputFile);
 
                 player.RemoveCoinsFromInventory(price);
                 ExecuteOnBuy.Invoke();

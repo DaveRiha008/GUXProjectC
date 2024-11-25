@@ -36,7 +36,7 @@ public class TimeSpentCounter : MonoBehaviour
         Debug.Log("Writing screen time to output");
 		foreach (int id in screenTimeSpentDict.Keys)
 		{
-			GameLoggingScript.WriteLineToLog($"Time spent on screen with ID {id} = {screenTimeSpentDict[id]}");
+			GameLoggingScript.WriteLineToLog($"Time spent on screen with ID {id} = {screenTimeSpentDict[id]}", GameLoggingScript.outputFile);
 		}
         alreadyWrittenToOutput = true;
 	}

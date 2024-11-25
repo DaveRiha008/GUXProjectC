@@ -11,7 +11,7 @@ public class HeatmapCounter : MonoBehaviour
 {
 
 
-    private int id = 0;
+    public int id = 0;
 
     private float x_offset = 0;
     private float y_offset = 0;
@@ -19,7 +19,7 @@ public class HeatmapCounter : MonoBehaviour
     private int x_size = 28;
     private int y_size = 14;
 
-    private float[,] heatmap;
+    //public float[,] heatmap;
     private float timeDelta = 0;
 
     private string outputPath = "";
@@ -30,8 +30,8 @@ public class HeatmapCounter : MonoBehaviour
     [SerializeField]
     PlayerController player;
 
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
         id = GetComponent<WindowTimeCountingScript>().id;
 
@@ -45,13 +45,27 @@ public class HeatmapCounter : MonoBehaviour
         x_size = (int)colliderTS.x;
         y_size = (int)colliderTS.y;
 
+        //heatmap = new float[x_size,y_size];
+        //for (int i = 0; i < x_size; i++)
+        //{
+        //    for (int j = 0; j < y_size; j++)
+        //    {
+        //        heatmap[i,j] = 0;
+        //    }
+        //}
+    }
 
-        Debug.Log(GameLoggingScript.outputPath);
-        this.outputPath = GameLoggingScript.outputPath + '/' + id + ".txt";
-        File.Create(outputPath);
-        Debug.Log($"Start of gamelogger for {id}");
+    // Start is called before the first frame update
+    void Start()
+    {
+
+
+        //Debug.Log(GameLoggingScript.outputPath);
+        //this.outputPath = GameLoggingScript.outputPath + '/' + id + ".txt";
+        //File.Create(outputPath);
+        //Debug.Log($"Start of gamelogger for {id}");
         
-        heatmap = new float[x_size,y_size];
+        
     }
 
     // Update is called once per frame
@@ -72,36 +86,25 @@ public class HeatmapCounter : MonoBehaviour
             Vector2 pos = collision.transform.position;
             int pos_x = (int)Math.Floor(pos.x - x_offset + x_size - 28 / 2);
             int pos_y = (int)Math.Floor(pos.y - y_offset - 27 / 2 + 20);
-            Debug.Log(pos_x + " " + pos_y + " " + outputPath);
+            // Debug.Log(pos_x + " " + pos_y + " " + outputPath);
             if (pos_x < 0 || pos_x >= x_size || pos_y < 0 || pos_y >= y_size)
             {
                 return;
             }
-            heatmap[pos_x, pos_y] += Time.deltaTime;
+            GameLoggingScript.heatmaps[id][pos_x, pos_y] += Time.deltaTime;
         }
 
         
     }
 
-    private void OnDestroy()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        UpdateHeatmap();
     }
 
-    public void UpdateHeatmap()
+    private void OnDestroy()
     {
-        string str = "";
-        for (int i = 0; i < y_size; i++)
-        {
-            for (int j = 0; j < x_size; j++)
-            {
-                str += heatmap[j,i] + " ";
-            }
-            WriteLineToLog(str);
-            Debug.Log(str);
-            str = "";
-        }
     }
+
 
     public void WriteLineToLog(string str)
     {
